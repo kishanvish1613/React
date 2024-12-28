@@ -46,6 +46,8 @@ function App () {
 			<button onClick={() => setValue({...value, isBanned: !value.isBanned})}>click</button>
 		</div>
 	)
+
+	// useState conti..
 };
 
 export default App;
