@@ -8,23 +8,28 @@ import { FaArrowRight } from "react-icons/fa";
 // } 
 
 
-function Card({values}) {
-    const {name, profession, img} = values
+
+
+//       Card({name, img, profession}) // another way to accept values.
+function Card({values, handleClick, index}) {
+
+    const {name, profession, img, friends} = values; 
+
     return (
-      <div className="w-52 bg-white rounded-md overflow-hidden">
-        <div className="w-full h-40 bg-slate-200 overflow-hidden object-contain">
-            <img className="w-full h-full object-cover" src={`${img}`} alt="" />
-        </div>
-        <div className="p-1.5 font-semibold">
-            <div className="text-sm mt-2">
-                <h1>{name}</h1>
+        <div className="w-56 h-64 bg-zinc-200 rounded-md overflow-hidden">
+            <div className="h-40 bg-zinc-400 w-full overflow-hidden">
+                <img className="w-56 h-40 object-cover object-center" src={img} alt="" />
             </div>
-            <div className="text-xs mt-1">
-                <h5>{profession}</h5>
+            <div className="p-2">
+                <div className="font-semibold">
+                    <p>{name}</p>
+                </div>
+                <div className="text-sm">
+                    <p>{profession}</p>
+                </div>
+                <button className="text-sm py-1 px-4 mt-2 bg-blue-500 rounded-sm text-white" onClick={() => handleClick(index)}>{friends ? "Friend" : "Add Friend"}</button>
             </div>
-            <button className="px-2 py-1 bg-blue-600 rounded-sm text-xs text-white mt-2" onClick={() => alert('hey')}>Add Friend</button>
         </div>
-      </div>
     );
 }
 
