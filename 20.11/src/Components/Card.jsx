@@ -27,7 +27,7 @@ function Card({values, handleClick, index}) {
                 <div className="text-sm">
                     <p>{profession}</p>
                 </div>
-                <button className="text-sm py-1 px-4 mt-2 bg-blue-500 rounded-sm text-white" onClick={() => handleClick(index)}>{friends ? "Friend" : "Add Friend"}</button>
+                <button className={`text-sm py-1 px-4 mt-2 ${friends ? "bg-red-500" : "bg-blue-500"} rounded-sm text-white`} onClick={() => handleClick(index)}>{friends ? "Friend" : "Add Friend"}</button>
             </div>
         </div>
     );
